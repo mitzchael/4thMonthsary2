@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForMyLove</title>
+  <style>
+    /* Basic styling for the body with background image */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      position: relative;
+      text-align: center;
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWZW85pRROoEVbAPS6MdyqE1YwnYP7EEDEmQ&s');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .message-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 10; /* Ensure this stays on top of the images */
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      padding: 10px 20px; /* Adds spacing around the text */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+      width: 80%; /* Ensures the message container is not too wide */
+      max-width: 800px;
+    }
+
+    .message {
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin: 0;
+      white-space: pre-line; /* Preserves newlines in the message */
+    }
+
+    .button-container {
+      margin-top: 20px;
+      z-index: 10; /* Ensure button stays above images */
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .audio-container {
+      margin-top: 50px; /* Adds spacing between the button and the audio */
+      z-index: 10;
+    }
+
+    .scattered-image {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      z-index: 1; /* Ensure images are behind the button and message */
+    }
+
+    /* Specific positions for the images (Left side) */
+    .image-1 {
+      top: 10px;
+      left: 10px;
+    }
+
+    .image-2 {
+      top: 150px;
+      left: 250px;
+    }
+
+    .image-3 {
+      top: 300px;
+      left: 500px;
+    }
+
+    .image-4 {
+      top: 450px;
+      left: 100px;
+    }
+
+    .image-5 {
+      top: 600px;
+      left: 600px;
+    }
+
+    /* Specific positions for the images (Right side) */
+    .image-6 {
+      top: 50px;
+      right: 10px;
+    }
+
+    .image-7 {
+      top: 200px;
+      right: 150px;
+    }
+
+    .image-8 {
+      top: 350px;
+      right: 300px;
+    }
+
+    .image-9 {
+      top: 500px;
+      right: 100px;
+    }
+
+    .image-10 {
+      top: 650px;
+      right: 50px;
+    }
+    .image-11 {
+      top: 700px;
+      left: 140px;
+    }
+
+    .image-12 {
+      top: 68px;
+      left: 1040px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message-container">
+    <div class="message">
+        happy 4th monthsay my love and more months with you my love, 
+        i love you forver and ever, sorry being the way i am sometimes 
+        i am sorry for all the ovethinking Im sorry for not treating you 
+        the best sometimes i really does love you and appreciates everthing you do. 
+        i will continue working on being better for you. You are such a blessing in my live. 
+        i love you, i cant give you a po flowrs and gift po for now but pag once naging 
+        okay na po lahat at nka luwag po at mag karoon po ng work mabiibigay ko din po mga gift na more flowers, 
+        i love you mommyy koo
+
+                                                - Daddii
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button onclick="window.location.href='skrt.html'">Click Me</button>
+  </div>
+
+  <div class="audio-container">
+    <audio controls autoplay loop>
+      <source src="lauv.mp3">
+    </audio>
+  </div>
+
+  <!-- Scattered images placed at specific locations -->
+  <img src="Tenor-unscreen (1).gif" class="scattered-image image-1" alt="Image 1">
+  <img src="Tenor-unscreen (2).gif" class="scattered-image image-2" alt="Image 2">
+  
+  <img src="Tenor-unscreen (4).gif" class="scattered-image image-4" alt="Image 4">
+  <img src="Tenor-unscreen (5).gif" class="scattered-image image-5" alt="Image 5">
+
+  <!-- Scattered images placed on the right side -->
+  <img src="Tenor-unscreen (4).gif" class="scattered-image image-6" alt="Image 6">
+  <img src="Tenor-unscreen (5).gif" class="scattered-image image-7" alt="Image 7">
+  <img src="Tenor-unscreen (1).gif" class="scattered-image image-8" alt="Image 8">
+  <img src="Tenor-unscreen (3).gif" class="scattered-image image-9" alt="Image 9">
+  <img src="Tenor-unscreen (2).gif" class="scattered-image image-10" alt="Image 10">
+  <img src="Tenor-unscreen (7).gif" class="scattered-image image-11" alt="Image 11">
+  <img src="Tenor-unscreen (6).gif" class="scattered-image image-12" alt="Image 12">
+
+
+  <script>
+    // Check if the audio should be playing based on localStorage
+    if (localStorage.getItem('audioPlaying') === 'true') {
+      document.getElementById('background-audio').play();
+    } else {
+      document.getElementById('background-audio').pause();
+    }
+
+    // Save the state of the audio when the user navigates away or reloads the page
+    window.addEventListener('beforeunload', function() {
+      if (!document.getElementById('background-audio').paused) {
+        localStorage.setItem('audioPlaying', 'true');
+      } else {
+        localStorage.setItem('audioPlaying', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>
